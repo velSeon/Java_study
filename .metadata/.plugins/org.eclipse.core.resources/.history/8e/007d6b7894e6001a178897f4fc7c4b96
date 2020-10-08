@@ -1,0 +1,18 @@
+package com.employee.entity;
+
+public class Sales extends Employee{
+
+	
+	int commission;
+	double commission_rate;
+	
+	Sales(){}
+
+	public Sales(int commission, double commission_rate) {
+		super();
+		this.commission = commission;
+		this.commission_rate = commission_rate;
+	}
+	
+	
+}

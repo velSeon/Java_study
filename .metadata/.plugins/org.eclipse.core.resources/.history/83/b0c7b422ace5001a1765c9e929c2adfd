@@ -1,0 +1,28 @@
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+
+import com.service.OracleMyBatisService;
+
+public class main {
+
+	public static void main(String[] args) {
+		OracleMyBatisService service = new OracleMyBatisService();		
+		List<String> list = service.select();
+		
+		for(String dept : list) {
+			System.out.println(dept);
+		}
+		
+		
+		
+
+	}
+
+}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="employee">
+
+	
+	<select id="selectAllEmployee" resultType="hashmap">
+	select empno,ename,dname,loc,sal,to_char(hiredate,'YYYY-MM-DD'), state from employee
+	</select>
+	
+	<select id="searchList" parameterType="hashmap" resultType="">
+	   select empno,ename,dname,loc,sal,to_char(hiredate,'YYYY-MM-DD') hiredate,state
+	   from employee
+	   <!-- if  사용--> 
+	</select>
+	
+	<select id="createEmployeeNum" resultType="int">
+	 select max(empno)+1 from employee
+	  <!-- 사원번호 최대 값을 가져와 +1 한 값을 리턴해줌 , 사원번호가 0인 경우 1로 리턴 -->
+	</select>
+	
+	<insert id="employeeInsert" parameterType="">
+	
+	<!-- 사원 추가 -->
+	</insert>
+	
+	<update id="employeeUpdate" parameterType="" >
+	<!-- 사원 업데이트 추가 -->
+	</update>
+	
+	<delete id="employeeDelete" parameterType="int">
+	 <!-- 사원 번호로 삭제 -->
+	</delete>
+	
+	<update id="employeeService" parameterType="" >
+	  update employee 
+	 <!-- if 절 사용 근태 상황 수정 -->
+	  where empno = #{empno}
+	</update>
+	
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+

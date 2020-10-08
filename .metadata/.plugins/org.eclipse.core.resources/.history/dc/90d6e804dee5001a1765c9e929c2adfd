@@ -1,0 +1,18 @@
+package ncsTest;
+
+import ncstest03.OracleService;
+
+public class oraclemain {
+
+	public static void main(String[] args) {
+
+		OracleService service = new OracleService();
+		
+		service.insert();
+			
+			
+	
+
+	}
+
+}

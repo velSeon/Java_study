@@ -1,0 +1,26 @@
+package ncsTest;
+
+import java.sql.SQLException;
+
+import ncstest03.Dept;
+import ncstest03.OracleService;
+
+public class oraclemain {
+
+	public static void main(String[] args) {
+
+		OracleService service = new OracleService();
+		
+		try {
+			service.insert(new Dept(99,"영업부","경기도"));
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+			
+			
+	
+
+	}
+
+}

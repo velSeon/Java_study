@@ -1,0 +1,43 @@
+package ncstest03;
+
+import java.sql.Connection;
+
+public class OracleService {
+
+	
+	
+	OracelDAO dao = new OracelDAO();
+
+	
+
+	
+	public void insert() {
+		
+		try {			
+			dao.insertDept();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	
+	
+	
+//	public void insert(Dept xx) throws Exception {
+//		Connection con = null;
+//		try {
+//			con = DriverManager.getConnection(url, userid, passwd);
+//			dao.insert(con, xx);
+//		} catch (Exception e) {
+//			System.out.println(e.getMessage());
+//		}finally {
+//			if(con != null)con.close();
+//		} 		
+	
+	
+	
+
+	
+	
+}

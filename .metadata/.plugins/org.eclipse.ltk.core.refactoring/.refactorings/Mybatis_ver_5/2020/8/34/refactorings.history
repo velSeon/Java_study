@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Mybatis_ver_5/src/Mapper3.xml&apos; to &apos;DeptMapper3.xml&apos;" description="Rename resource &apos;Mapper3.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Mapper3.xml" name="DeptMapper3.xml" stamp="1597972689346" updateReferences="true"/>
+</session>

@@ -1,0 +1,21 @@
+package ncstest03;
+
+public class OracleService {
+	
+	public OracleService() throws Exception {
+		//드라이버 로딩
+		//dao생성	
+		dao = new OracelDAO();
+		try {
+			Class.forName(driver);
+					
+		} catch (Exception e) {		
+			e.printStackTrace();
+		}
+		
+	}
+	
+
+	
+	
+}

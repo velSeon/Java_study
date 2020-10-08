@@ -1,0 +1,8 @@
+package ncsTest;
+
+public class DTO {
+private int deptno;
+private String dname;
+private String loc;
+
+}

@@ -1,0 +1,16 @@
+package com.employee.entity;
+
+public class Engineer extends Employee{
+
+	Engineer(){}
+	
+	public Engineer(int empno, String ename, String hiredate, String loc, int sal, String state) {
+	
+		this.empno = empno;
+		this.ename = ename;
+		this.hiredate = hiredate;
+		this.loc = loc;
+		this.sal = sal;
+		this.state = state;
+	}
+}

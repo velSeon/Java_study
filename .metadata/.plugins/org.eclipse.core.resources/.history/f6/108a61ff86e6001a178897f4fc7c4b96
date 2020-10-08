@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="employee">
+
+	
+	<select id="selectAllEmployee" resultType="hashmap">
+	select empno,ename,dname,loc,sal,to_char(hiredate,'YYYY-MM-DD') hiredate, state 
+	from employee
+	order by empno
+	</select>
+	
+	<select id="searchList" parameterType="hashmap" resultType="hashmap">
+	   select empno,ename,dname,loc,sal,to_char(hiredate,'YYYY-MM-DD') hiredate,state
+	   from employee where
+	   <!-- if  사용--> 
+	   <if test= "inputSubMenu == 1">
+	    empno = #{searchWord}
+	   </if>
+	   <if test = "inputSubMenu == 2">
+	   ename = #{searchWord}
+	   </if>
+	   <if test = "inputSubMenu == 3">
+	   dname = #{searchWord}
+	   </if>
+	   
+	  <if test = "inputSubMenu == 4">
+	   loc = #{searchWord}
+	   </if> 
+	   
+	   <if test = "inputSubMenu == 5">
+	   sal = #{searchWord}
+	   </if>
+	</select>
+	
+	<select id="createEmployeeNum" resultType="int">
+	 select NVL(max(empno),0) +1 as num
+	  <!-- 사원번호 최대 값을 가져와 +1 한 값을 리턴해줌 , 사원번호가 0인 경우 1로 리턴 -->
+	</select>
+	
+	<insert id="employeeInsert" parameterType="Employee">
+	insert into employee values (#{empno},#{ename},#{dname},#{loc},#{sal},#{hiredate},#{state})
+	<!-- 사원 추가 -->
+	</insert>
+	
+	<update id="employeeUpdate" parameterType="Employee" >
+	update employee set dname = #{dname}, loc = #{loc} where empno = #{empno}	
+	<!-- 사원 업데이트 추가 -->
+	</update>
+	
+	<delete id="employeeDelete" parameterType="int">
+	delete from employee where empno = #{empno}	
+	 <!-- 사원 번호로 삭제 -->
+	</delete>
+	
+	<update id="employeeService" parameterType="HashMap" >
+	  update dept set state = #{state}
+	 <!-- if 절 사용 근태 상황 수정 -->
+	  where empno = #{empno}
+	  <if test ="inputColumn==1">
+	  state = 외출
+	  </if>
+	  <if test ="inputColumn==2">
+	  state = 출장
+	  </if>
+	  <if test ="inputColumn==3">
+	  state = 휴가
+	  </if>
+	  <if test ="inputColumn==4">
+	  state = 근무
+	  </if>
+	</update>
+	
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+

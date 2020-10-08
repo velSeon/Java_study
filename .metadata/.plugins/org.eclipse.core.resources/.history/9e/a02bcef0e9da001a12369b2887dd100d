@@ -1,0 +1,23 @@
+
+
+public class test01 {
+
+
+	public static void main(String[] args) {
+		
+		String mesg ="4,2,3,6,7";
+		
+		
+		StringTokenizer str = new StringTokenizer(",");
+		
+		//str = new StringTokenizer(mesg,",");
+		while(str.hasMoreElments()) {
+			String token = Integer.parseInt(str);
+			token +=str;
+			
+		}System.out.println(token);
+
+	}
+
+	
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dept.DeptMapper2">
+
+
+<select id ="selectDynamicDeptno" parameterType="hashmap" resultType="Dept">
+select * from dept
+
+<if test="deptno !=null">
+where deptno = #{deptno} <!-- hashmap의 키를 이용한 값을 가져오기 -->
+</if>
+
+</select>
+
+
+
+<delete id="deptDelete" parameterType="Dept">
+delete from dept where deptno = #{deptno}
+</delete>
+
+<update id="deptUpdate" parameterType="Dept">
+update dept set dname = #{dname}, loc = #{loc} where deptno = #{deptno}
+</update>
+
+
+<select id="deptCount" resultType="int">
+select count(*) from dept
+</select>
+
+<select id="selectNnL2" resultType="Dept">
+select deptno, dname, loc from dept where dname=#{dname} and loc=#{loc}
+</select>
+
+<select id="selectNoL" resultType="Dept">
+select deptno, dname, loc from dept where loc=#{loc} 
+</select>
+
+<select id="selectNoL1" resultType="Dept">
+select deptno, dname, loc from dept where dname=#{dname}
+</select>
+
+
+
+</mapper>
